@@ -14,8 +14,8 @@
 	-->
 
 	<!-- Google Fonts -->
-	<link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700itali" rel="stylesheet">
-	<link href="http://fonts.googleapis.com/css?family=Raleway:400,900,800,700,500,200,100,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+		rel="stylesheet">
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="resources/home/bootstrap/bootstrap.css">
@@ -35,7 +35,7 @@
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			font-family: Arial, sans-serif;
+			font-family: 'Montserrat';
 		}
 
 		.block-background {
@@ -91,25 +91,35 @@
 		}
 
 		.grid-button {
-			font-size: 25px;
-			font-weight: 1000;
-			border-radius: 17px;
-			padding: 15px 35px;
+			font-size: 20px;
+			font-weight: 700;
+			border-radius: 10px;
+			padding: 12px 35px;
 			text-align: center;
 			text-decoration: none;
 			display: inline-block;
-			margin: 10px;
-			border: 1px solid #ffffff;
-			color: #C40C0C;
+			margin: 20px;
+			border: 2px solid #800000;
+			/* Red border */
+			background-color: #800000;
+			/* Red background */
+			color: #ffffff;
+			/* White text (always white) */
+			transition: background-color 0.3s ease, border-color 0.3s ease;
+			/* No color transition */
 		}
 
 		.grid-button:hover {
-			background-color: #C40C0C;
-			color: #C40C0C;
+			background-color: #800000;
+			/* Keep the background color the same on hover */
+			border-color: #800000;
+			/* Border also remains red */
+			color: #ffffff !important;
+			/* Keep the text white on hover */
 		}
 
 		body {
-			font-family: 'Roboto', sans-serif;
+			font-family: 'Montserrat';
 			margin: 0;
 			padding: 0;
 			background: #f4f4f4;
@@ -129,10 +139,29 @@
 
 		/* Heading */
 		h2 {
-			font-size: 28px;
+			font-size: 20px;
 			margin-bottom: 20px;
 			color: #333;
+			font-family: 'Montserrat';
 		}
+
+		h2-hitam {
+			font-size: 40px;
+			margin-bottom: 20px;
+			color: #000;
+			font-weight: bold;
+			font-family: 'Montserrat';
+	
+		}
+
+		h2-merah {
+			font-size: 40px;
+			margin-bottom: 20px;
+			color: #C80036;
+			font-weight: bold;
+			font-family: 'Montserrat';
+		}
+
 
 		/* Table Wrapper */
 		.table-wrapper {
@@ -146,26 +175,25 @@
 		table {
 			width: 100%;
 			border-collapse: collapse;
-			border-radius: 17px;
-			overflow: center;
+			border-radius: 8px;
+			overflow: hidden;
 			background: #fff;
-			font-size: 15px;
+			font-size: 12px;
 			text-align: center;
 			/* Reduced font size */
 		}
 
 		.table-container {
-			max-height: 1000px;
+			max-height: 800px;
 			/* Atur tinggi maksimum kontainer tabel */
 			overflow-y: auto;
 			/* Tambahkan scroll vertikal jika konten melebihi tinggi */
-			border: 10px solid #ddd;
+			border: 1px solid #ddd;
 			/* Tambahkan border di sekitar kontainer */
-			border-radius: 	17px;
+			border-radius: 8px;
 			/* Rounded corners */
 			width: 120%;
 		}
-
 
 		thead {
 			background-color: #333;
@@ -177,7 +205,6 @@
 			/* Adjusted padding for smaller font size */
 			text-align: left;
 			font-weight: 600;
-			text-transform: uppercase;
 		}
 
 		tbody tr {
@@ -368,7 +395,7 @@
 			<div class="container home-intro-content">
 				<div class="row">
 					<div class="col-md-12">
-							<h2>TELKOM PRESENTS</h2>
+							<h2>Telkom Presents</h2>
 							<h2>MINITOK</h2>
 							<p>Aplikasi Monitoring Stock Minium NTE.Solusi terbaik untuk memonitor kebutuhan NTE di Telkom Regional dengan efisien
 							</p>
@@ -381,22 +408,23 @@
 		</div> <!-- /.parallax-overlay -->
 	</section> <!-- /#homeIntro -->
 
-	<section class="section" id="about">
+	<section class="header" id="about">
 		<div class="container">
-			<div class="row">				
+			<div class="row">
+				<div class="col-md-5 col-xs-11">
+				</div>
 				<br />
-				<div class="col-lg-6 col-md-6 col-xs-12">
+				<div class="col-md-5 col-xs-12">
 					<section>
 						<!--for demo wrap-->
-						<h1>Rekap Delivery</h1>
+						<h2-hitam>Rekap</h2-hitam> <h2-merah>Delivery</h2-merah>
 						<br />
 						<div class="tbl-header">
-							<div class="table-container"
-								style="position:center; max-height: 1000px; width: 1000px;">
+							<div class="table-container" style="position: relative; max-height: 600px; width: 1000px;">
 								<table class="table table-bordered" id="filterTable">
 									<thead>
 										<tr class="text-center"
-											style="color:black; background-color:gray; color:white;">
+											style="color:black; background-color:#800000; color:white;">
 											<th rowspan="2" class="first-col sticky-col"
 												style="min-width: 250px; text-align: center; vertical-align: middle;">
 												Warehouse</th>
@@ -410,7 +438,7 @@
 											<th colspan="2">Minimum Stock Requirement Retail</th>
 											<th colspan="2">On Delivery</th>
 										</tr>
-										<tr class="text-center" style="background-color:gray; color:white;">
+										<tr class="text-center" style="background-color:#982B1C; color:white;">
 											<!-- <th  colspan="4" ></th> -->
 											<th style="text-align: center; vertical-align: middle;">Total
 												Retail</th>
@@ -441,7 +469,7 @@
 									<tbody id="tableBiasa-body">
 										<tr>
 											<td value="" class="first-col sticky-col"
-												style="background-color:gray; color:white; font-weight: bold;">
+												style="background-color:#982B1C; color:white; font-weight: bold;">
 												<a style="text-decoration:none; color: white; font-weight: bold; cursor: pointer;"
 													href="">WH
 													TR TREG1</a>
@@ -472,17 +500,17 @@
 
 												<td><a onClick='setOnDelivery("WH TR TREG1","retail")'
 														data-toggle='modal' data-target='#onDeliveryModal'
-														style="cursor: pointer; color:grey;">0</a>
+														style="cursor: pointer; color:black;">0</a>
 												</td>
 												<td><a onClick='setOnDelivery("WH TR TREG1","premium")'
 														data-toggle='modal' data-target='#onDeliveryModal'
-														style="cursor: pointer; color:grey;">1.736</a>
+														style="cursor: pointer; color:g=black;">1.736</a>
 												</td>
 											</div>
 										</tr>
 										<tr>
 											<td value="" class="first-col sticky-col"
-												style="background-color:gray; color:white; font-weight: bold;">
+												style="background-color:#982B1C; color:white; font-weight: bold;">
 												<a style="text-decoration:none; color: white; font-weight: bold; cursor: pointer;"
 													href="">WH
 													TR TREG2</a>
@@ -513,17 +541,17 @@
 
 												<td><a onClick='setOnDelivery("WH TR TREG2","retail")'
 														data-toggle='modal' data-target='#onDeliveryModal'
-														style="cursor: pointer; color:grey;">0</a>
+														style="cursor: pointer; color:black;">0</a>
 												</td>
 												<td><a onClick='setOnDelivery("WH TR TREG2","premium")'
 														data-toggle='modal' data-target='#onDeliveryModal'
-														style="cursor: pointer; color:grey;">1.514</a>
+														style="cursor: pointer; color:black;">1.514</a>
 												</td>
 											</div>
 										</tr>
 										<tr>
 											<td value="" class="first-col sticky-col"
-												style="background-color:gray; color:white; font-weight: bold;">
+												style="background-color:#982B1C; color:white; font-weight: bold;">
 												<a style="text-decoration:none; color: white; font-weight: bold; cursor: pointer;"
 													href="">WH
 													TR TREG3</a>
@@ -554,17 +582,17 @@
 
 												<td><a onClick='setOnDelivery("WH TR TREG3","retail")'
 														data-toggle='modal' data-target='#onDeliveryModal'
-														style="cursor: pointer; color:grey;">0</a>
+														style="cursor: pointer; color:black;">0</a>
 												</td>
 												<td><a onClick='setOnDelivery("WH TR TREG3","premium")'
 														data-toggle='modal' data-target='#onDeliveryModal'
-														style="cursor: pointer; color:grey;">1.203</a>
+														style="cursor: pointer; color:black;">1.203</a>
 												</td>
 											</div>
 										</tr>
 										<tr>
 											<td value="" class="first-col sticky-col"
-												style="background-color:gray; color:white; font-weight: bold;">
+												style="background-color:#982B1C; color:white; font-weight: bold;">
 												<a style="text-decoration:none; color: white; font-weight: bold; cursor: pointer;"
 													href="">WH
 													TR TREG4</a>
@@ -595,17 +623,17 @@
 
 												<td><a onClick='setOnDelivery("WH TR TREG4","retail")'
 														data-toggle='modal' data-target='#onDeliveryModal'
-														style="cursor: pointer; color:grey;">0</a>
+														style="cursor: pointer; color:black;">0</a>
 												</td>
 												<td><a onClick='setOnDelivery("WH TR TREG4","premium")'
 														data-toggle='modal' data-target='#onDeliveryModal'
-														style="cursor: pointer; color:grey;">920</a>
+														style="cursor: pointer; color:black;">920</a>
 												</td>
 											</div>
 										</tr>
 										<tr>
 											<td value="" class="first-col sticky-col"
-												style="background-color:gray; color:white; font-weight: bold;">
+												style="background-color:#982B1C; color:white; font-weight: bold;">
 												<a style="text-decoration:none; color: white; font-weight: bold; cursor: pointer;"
 													href="">WH
 													TR TREG5</a>
@@ -636,17 +664,17 @@
 
 												<td><a onClick='setOnDelivery("WH TR TREG5","retail")'
 														data-toggle='modal' data-target='#onDeliveryModal'
-														style="cursor: pointer; color:grey;">0</a>
+														style="cursor: pointer; color:black;">0</a>
 												</td>
 												<td><a onClick='setOnDelivery("WH TR TREG5","premium")'
 														data-toggle='modal' data-target='#onDeliveryModal'
-														style="cursor: pointer; color:grey;">1.230</a>
+														style="cursor: pointer; color:black;">1.230</a>
 												</td>
 											</div>
 										</tr>
 										<tr>
 											<td value="" class="first-col sticky-col"
-												style="background-color:gray; color:white; font-weight: bold;">
+												style="background-color:#982B1C; color:white; font-weight: bold;">
 												<a style="text-decoration:none; color: white; font-weight: bold; cursor: pointer;"
 													href="">WH
 													TR TREG6</a>
@@ -676,17 +704,17 @@
 
 												<td><a onClick='setOnDelivery("WH TR TREG6","retail")'
 														data-toggle='modal' data-target='#onDeliveryModal'
-														style="cursor: pointer; color:grey;">0</a>
+														style="cursor: pointer; color:black;">0</a>
 												</td>
 												<td><a onClick='setOnDelivery("WH TR TREG6","premium")'
 														data-toggle='modal' data-target='#onDeliveryModal'
-														style="cursor: pointer; color:grey;">920</a>
+														style="cursor: pointer; color:black;">920</a>
 												</td>
 											</div>
 										</tr>
 										<tr>
 											<td value="" class="first-col sticky-col"
-												style="background-color:gray; color:white; font-weight: bold;">
+												style="background-color:#982B1C; color:white; font-weight: bold;">
 												<a style="text-decoration:none; color: white; font-weight: bold; cursor: pointer;"
 													href="">WH
 													TR TREG7</a>
@@ -716,17 +744,17 @@
 
 												<td><a onClick='setOnDelivery("WH TR TREG7","retail")'
 														data-toggle='modal' data-target='#onDeliveryModal'
-														style="cursor: pointer; color:grey;">0</a>
+														style="cursor: pointer; color:black;">0</a>
 												</td>
 												<td><a onClick='setOnDelivery("WH TR TREG7","premium")'
 														data-toggle='modal' data-target='#onDeliveryModal'
-														style="cursor: pointer; color:grey;">910</a>
+														style="cursor: pointer; color:black;">910</a>
 												</td>
 											</div>
 										</tr>
-										<tr style="font-weight: bold; background-color:gray; color:white;">
+										<tr style="font-weight: bold; background-color:#982B1C; color:white;">
 											<td value="" class="sticky-col first-col text-center"
-												style="background-color:gray; color:white;">
+												style="background-color:#982B1C; color:white;">
 												<div hidden>Z</div>Total
 											</td>
 											<td hidden></td>
@@ -776,7 +804,7 @@
 	</section> <!-- /.services -->
 
 	<section class="header">
-		<h1>New Update NTE Management</h1>
+		<h2-hitam>New Update</h2-hitam> <h2-merah>NTE Management</h2-merah>
 		<p>Kanal Pemberitaan Terkait Update Pengelolaan NTE</p>
 		<section class="dashboard">
 			<div class="card">
@@ -803,7 +831,9 @@
 				<div class="col-md-6 col-xs-12">
 					<div>
 						<br />
-						<h1>Aplikasi Monitoring Stock Minimum NTE</h1>
+						<h2-hitam>Aplikasi Monitoring</h2-hitam>
+						<br/>
+						<h2-merah>Stock Minimum NTE</h2-merah>
 						<p class="testimonial-description">Solusi terbaik untuk memonitor kebutuhan NTE di Telkom
 							Regional dengan efisien</p>
 					</div>

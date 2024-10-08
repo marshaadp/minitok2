@@ -16,14 +16,14 @@ body {
   font-weight: normal;
   font-style: normal;
   line-height: 28px;
-  color: #777777;
+  color: #000;
   -webkit-font-smoothing: antialiased;
   /* Fix for webkit rendering */
   -webkit-text-size-adjust: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #31373a;
+  color: #000;
   font-family: 'Montserrat';
   font-weight: normal;
 
@@ -388,7 +388,7 @@ a.main-button.accent-color:hover {
 
 label {
   font-weight: normal;
-  color: #aaaaaa;
+  color: #000;
 }
 
 input, textarea {

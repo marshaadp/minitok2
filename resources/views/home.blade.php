@@ -844,17 +844,17 @@
 						<div class="form-group">
 							<label for="name">Monitor</label>
 							<input type="text" id="name" name="name" placeholder="Masukkan nama Anda di sini"
-								style="margin-top: 5px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 10px; width: 150%;">
+								style="margin-top: 5px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 10px; width: 150%; color : #000;">
 						</div>
 						<div class="form-group">
 							<label for="email">Email*</label>
 							<input type="email" id="email" name="email" placeholder="Masukkan email Anda di sini"
-								style="margin-top: 5px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; width: 150%;">
+								style="margin-top: 5px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; width: 150%; color : #000;">
 						</div>
 						<div class="form-group">
 							<label for="message">Pesan*</label>
 							<textarea id="message" name="message" placeholder="Tulis pesan Anda di sini"
-								style="margin-top: 5px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; width: 150%;"></textarea>
+								style="margin-top: 5px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; width: 150%; color : #000;"></textarea>
 						</div>
 						<button type="submit">Kirim</button>
 					</form>
@@ -869,8 +869,8 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="section-header">
-							<h2 class="section-title">Recent from our blog</h2>
-							<p class="section-desc">Everything you need to create a professional website.</p>
+							<h2 class="section-title">See messages from our monitor</h2>
+							<p class="section-desc">Cek secara</p>
 						</div> <!-- /.section-header -->
 					</div> <!-- /.col-md-12 -->
 				</div> <!-- /.row -->
@@ -891,16 +891,29 @@
 					<div class="col-md-4 col-sm-6">
 						<div class="blog-post clearfix">
 							<div class="thumb-post">
-								<a href="blog-single.html"><img src="images/includes/blogthumb2.jpg" alt=""
+								<a href="blog-single.html"><img src="images/includes/blogthumb1.jpg" alt=""
 										class="img-circle"></a>
 							</div>
 							<div class="blog-post-content">
-								<h4 class="post-title"><a href="blog-single.html">Design Deliverables – easily share
-										project</a></h4>
-								<span class="meta-post-date">10 February 2084</span>
+								<h4 class="post-title"><a href="blog-single.html">Aplikasi ini sangat membantu dalam
+										memonitoring kebutuhan NTE di Telkom. Sangat direkomendasikan</a></h4>
+								<span class="meta-post-date">rif</span>
 							</div>
-						</div> <!-- /.blog-post -->
+
+							</div> <!-- /.blog-post -->
 					</div> <!-- /.col-md-4 -->
+					<div class="col-md-4 col-sm-6">
+						<div class="blog-post clearfix">
+							<div class="thumb-post">
+								<a href="blog-single.html"><img src="images/includes/blogthumb1.jpg" alt=""
+										class="img-circle"></a>
+							</div>
+							<div class="blog-post-content">
+								<h4 class="post-title"><a href="blog-single.html">Aplikasi ini sangat membantu dalam
+										memonitoring kebutuhan NTE di Telkom. Sangat direkomendasikan</a></h4>
+								<span class="meta-post-date">rif</span>
+							</div>
+
 				</div> <!-- /.row -->
 			</div> <!-- /.container -->
 		</div> <!-- /.parallax-overlay -->

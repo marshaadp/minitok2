@@ -1,0 +1,55 @@
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.podium__item {
+  width: 80px;
+}
+
+.podium__rank {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  color: #fff;
+}
+
+.podium__city {
+  text-align: center;
+  padding: 0 .5rem;
+}
+
+.podium__number {
+  width: 27px;
+  height: 75px;
+}
+
+.podium .first {
+  min-height: 180px;
+  /*background: rgb(255,172,37);*/
+  background: #ff2e84;
+/*background: 
+  linear-gradient(333deg, 
+  rgba(255,172,37,1) 0%, 
+  rgba(254,207,51,1) 13%, 
+  rgba(254,224,51,1) 53%, 
+  rgba(255,172,37,1) 100%);*/
+  border-radius:10px 10px 0px 0px;
+}
+
+.podium .second {
+  min-height: 140px;
+  background: #ff80b4;
+  border-radius:10px 10px 0px 0px
+}
+
+.podium .third {
+  min-height: 80px;
+  background: #ffb8d5;
+  border-radius:10px 10px 0px 0px;
+}

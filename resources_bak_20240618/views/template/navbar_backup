@@ -1,0 +1,51 @@
+<style type="text/css">
+  .dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0; /* remove the gap so it doesn't close */
+  }
+</style>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="padding-right: 60px; padding-left: 60px;">
+  <!-- <div class="container"> -->
+    <a class="navbar-brand">
+      SCMT
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="{{url('/dashboard_did')}}">Dashboard</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="{{url('/rekap_delivery')}}">Rekap Delivery</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="{{url('/penerima')}}">Penerima</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="{{url('/input_data')}}">Input Data</a>
+        </li>
+
+        <!-- <li class="nav-item">
+          <a class="nav-link active" href="{{url('/beranda_boq_njki')}}">BoQ NJKI</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{{url('/beranda_boq_juskeb')}}">BoQ Juskeb</a>
+        </li> -->
+      </ul>
+
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active btn btn-danger" style="color:white" href="{{url('/logout')}}">Logout</a>
+        </li>
+      </ul>
+
+
+    </div>
+  <!-- </div> -->
+</nav>

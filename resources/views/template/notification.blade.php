@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap");
+
+            :root {
+                --Red: hsl(1, 90%, 64%);
+                --Blue: hsl(219, 85%, 26%);
+                --White: hsl(0, 0%, 100%);
+                --Very-light-grayish-blue: hsl(210, 60%, 98%);
+                --Light-grayish-blue-1: hsl(211, 68%, 94%);
+                --Light-grayish-blue-2: hsl(205, 33%, 90%);
+                --Grayish-blue: hsl(219, 14%, 63%);
+                --Dark-grayish-blue: hsl(219, 12%, 42%);
+                --Very-dark-blue: hsl(224, 21%, 14%);
+            }
+
+            * {
+                font-family: "Plus Jakarta Sans", sans-serif;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                background-color: var(--Very-light-grayish-blue);
+            }
+
+            .container {
+                background-color: var(--White);
+                padding: 1.5rem 1rem;
+                border-radius: 0.5rem;
+            }
+
+            header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 2rem;
+            }
+
+            .notif_box {
+                display: flex;
+                align-items: center;
+            }
+
+            #notifesMain {
+                background-color: var(--Blue);
+                margin-left: 0.5rem;
+                width: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 30px;
+                color: var(--White);
+                font-weight: 800;
+                border-radius: 0.5rem;
+            }
+
+            #notifesHeader {
+                padding: 1px;
+                color: #fff;
+                margin-left: -5px;
+            }
+
+            #mark_all {
+                cursor: pointer;
+            }
+
+            #mark_all:hover {
+                color: var(--Blue);
+            }
+
+            p {
+                color: var(--Dark-grayish-blue);
+            }
+
+            main {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .notif_card {
+                display: flex;
+                height: 90px;
+                align-items: center;
+                border-radius: 0.5rem;
+                padding: 1rem;
+                background-color: var(--Light-grayish-blue-1) !important;
+            }
+            img {
+                width: 50px;
+            }
+
+            .description {
+                margin-left: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            strong {
+                color: var(--Very-dark-blue);
+                cursor: pointer;
+            }
+
+            strong:hover {
+                color: var(--Blue);
+            }
+
+            .unread {
+                background-color: var(--Light-grayish-blue-1) !important;
+            }
+
+            .unread p:first-of-type::after {
+                content: " ";
+                /* background-color: var(--Red); */
+                width: 10px;
+                height: 10px;
+                display: inline-block;
+                border-radius: 50%;
+            }
+
+            .message_card {
+                height: 40px;
+                display: flex;
+                align-items: center;
+            }
+
+            .message {
+                padding: 1rem;
+                border: 1px solid var(--Light-grayish-blue-2);
+                border-radius: 0.3rem;
+                cursor: pointer;
+                margin: 0 0 0 5rem;
+            }
+
+            .message:hover {
+                background-color: var(--Light-grayish-blue-1);
+            }
+
+            .chess_img {
+                margin-left: auto;
+            }
+
+            @media screen and (max-width: 550px) {
+                .container {
+                    margin: 0;
+                }
+            }
+
+            .dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+                /* remove the gap so it doesn't close */
+            }
+
+            .icon {
+                cursor: pointer;
+                margin-right: auto;
+            }
+
+            .icon img {
+                display: inline-block;
+                width: 20px;
+                margin-top: 7px;
+            }
+
+            .icon:hover {
+                opacity: 0.7;
+            }
+
+            .notifi-box {
+                margin-right: -250px;
+                background-color: #fff;
+                width: 400px;
+                opacity: 0;
+                position: absolute;
+                transition: 1s opacity, 250ms height;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                overflow-y: auto;
+            }
+        </style>
+
+        <!-- ====== CSS ====== -->
+        <!-- <link rel="stylesheet" href="notification_style.css" /> -->
+    </head>
+    <body>
+        <div class="notifi-box" id="box">
+            <div class="container">
+                <header>
+                    <div class="notif_box">
+                        <h2 class="title">Notifikasi</h2>
+                        <span id="notifesMain"></span>
+                    </div>
+                    <p id="mark_all"></p>
+                </header>
+                <main id="main-content">
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var box = document.getElementById("box");
+        var down = false;
+
+        function toggleNotifi() {
+            if (down) {
+                box.style.height = "0px";
+                box.style.opacity = 0;
+                box.style.zIndex = 0; // Set z-index to 0 when closing
+                down = false;
+            } else {
+                box.style.height = "510px";
+                box.style.opacity = 1;
+                box.style.zIndex = 1; // Set z-index to 1 when opening
+                down = true;
+            }
+        }
+
+        $("document").ready(function() {
+            $.ajax({
+                url: '{{ url('/get_all_notification_message') }}',
+                type: 'GET',
+                success: function(jsonData) {
+                    jsonData.forEach(function(item) {
+                        var html = '';
+                        if(item.status == 'Sent')
+                        {
+                            if(item.day > 0){
+                                html = '<div class="notif_card unread">' +
+                                            '<div class="description">' +
+                                                '<p class="user_activity">' +
+                                                    '<strong><a href="{{ url('/inbox_message') }}">'+ item.fullname +'</a></strong>' + ' send message no ' + item.id +
+                                                '</p>' +
+                                                '<p class="time">'+ item.day.toString() +' day ago</p>' +
+                                            '</div>' +
+                                        '</div>';
+                            }
+                            else if(item.hour > 0){
+                                html = '<div class="notif_card unread">' +
+                                            '<div class="description">' +
+                                                '<p class="user_activity">' +
+                                                    '<strong><a href="{{ url('/inbox_message') }}">'+ item.fullname +'</a></strong>' + ' send message no ' + item.id +
+                                                '</p>' +
+                                                '<p class="time">'+ item.hour.toString() +' hour ago</p>' +
+                                            '</div>' +
+                                        '</div>';
+                            }
+                            else if(item.minute > 0){
+                                html = '<div class="notif_card unread">' +
+                                            '<div class="description">' +
+                                                '<p class="user_activity">' +
+                                                    '<strong><a href="{{ url('/inbox_message') }}">'+ item.fullname +'</a></strong>' + ' send message no ' + item.id +
+                                                '</p>' +
+                                                '<p class="time">'+ item.minute.toString() +' minute ago</p>' +
+                                            '</div>' +
+                                        '</div>';
+                            }
+                            else{
+                                html = '<div class="notif_card unread">' +
+                                            '<div class="description">' +
+                                                '<p class="user_activity">' +
+                                                    '<strong><a href="{{ url('/inbox_message') }}">'+ item.fullname +'</a></strong>' + ' send message no ' + item.id +
+                                                '</p>' +
+                                                '<p class="time">'+ item.second.toString() +' second ago</p>' +
+                                            '</div>' +
+                                        '</div>';
+                            }
+                        }
+                        else
+                        {
+                            if(item.day > 0){
+                            html = '<div class="notif_card unread">' +
+                                        '<div class="description">' +
+                                            '<p class="user_activity">' +
+                                                '<strong><a href="{{ url('/sent_message') }}">'+ item.fullname +'</a></strong> ' + item.status + ' message no ' + item.id +
+                                            '</p>' +
+                                            '<p class="time">'+ item.day.toString() +' day ago</p>' +
+                                        '</div>' +
+                                   '</div>';
+                            }
+                            else if(item.hour > 0){
+                                html = '<div class="notif_card unread">' +
+                                            '<div class="description">' +
+                                                '<p class="user_activity">' +
+                                                    '<strong><a href="{{ url('/sent_message') }}">'+ item.fullname +'</a></strong> ' + item.status + ' message no ' + item.id +
+                                                '</p>' +
+                                                '<p class="time">'+ item.hour.toString() +' hour ago</p>' +
+                                            '</div>' +
+                                    '</div>';
+                            }
+                            else if(item.minute > 0){
+                                html = '<div class="notif_card unread">' +
+                                            '<div class="description">' +
+                                                '<p class="user_activity">' +
+                                                    '<strong><a href="{{ url('/sent_message') }}">'+ item.fullname +'</a></strong> ' + item.status + ' message no ' + item.id +
+                                                '</p>' +
+                                                '<p class="time">'+ item.minute.toString() +' minute ago</p>' +
+                                            '</div>' +
+                                    '</div>';
+                            }
+                            else{
+                                html = '<div class="notif_card unread">' +
+                                            '<div class="description">' +
+                                                '<p class="user_activity">' +
+                                                    '<strong><a href="{{ url('/sent_message') }}">'+ item.fullname +'</a></strong> ' + item.status + ' message no ' + item.id +
+                                                '</p>' +
+                                                '<p class="time">'+ item.second.toString() +' second ago</p>' +
+                                            '</div>' +
+                                    '</div>';
+                            }
+                        }
+
+                        $('#main-content').append(html);
+                        
+                        const unreadMessages = document.querySelectorAll(".unread");
+                        const markAll = document.getElementById("mark_all");
+                        const unreadHeader = document.getElementById("notifesHeader");
+                        const unreadMain = document.getElementById("notifesMain");
+
+                        unreadHeader.innerText = unreadMessages.length;
+                        unreadMain.innerText = unreadMessages.length;
+
+                        // unreadMessages.forEach((message) => {
+                        //     message.addEventListener("click", () => {
+                        //         message.classList.remove("unread");
+                        //         const newUnreadMessages =
+                        //         document.querySelectorAll(".unread");
+                        //         unreadHeader.innerText = newUnreadMessages.length;
+                        //         unreadMain.innerText = newUnreadMessages.length;
+                        //     });
+                        // });
+
+                        markAll.addEventListener("click", () => {
+                            unreadMessages.forEach((message) =>
+                                message.classList.remove("unread")
+                            );
+                            const newUnreadMessages = document.querySelectorAll(".unread");
+                            unreadHeader.innerText = newUnreadMessages.length;
+                            unreadMain.innerText = newUnreadMessages.length;
+                        });
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+        });
+    </script>
+</html>

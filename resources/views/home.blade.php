@@ -2,8 +2,8 @@
 <html lang="en-US">
 
 <head>
+	<meta name="viewport" content="minimum-scale=1, initial-scale=1.0, width=device-width">
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Home</title>
 	<meta name="keywords" content="">
 	<meta name="description" content="">
@@ -91,22 +91,21 @@
 		}
 
 		.grid-button {
-			font-size: 16px;
-			font-weight: 500;
-			border-radius: 28px;
-			padding: 10px 20px;
+			font-size: 25px;
+			font-weight: 1000;
+			border-radius: 17px;
+			padding: 15px 35px;
 			text-align: center;
 			text-decoration: none;
 			display: inline-block;
 			margin: 10px;
 			border: 1px solid #ffffff;
-			color: #ffffff;
-			transition: background-color 0.3s ease, color 0.3s ease;
+			color: #C40C0C;
 		}
 
 		.grid-button:hover {
-			background-color: #ffffff;
-			color: #000000;
+			background-color: #C40C0C;
+			color: #C40C0C;
 		}
 
 		body {
@@ -147,22 +146,22 @@
 		table {
 			width: 100%;
 			border-collapse: collapse;
-			border-radius: 8px;
-			overflow: hidden;
+			border-radius: 17px;
+			overflow: center;
 			background: #fff;
-			font-size: 12px;
+			font-size: 15px;
 			text-align: center;
 			/* Reduced font size */
 		}
 
 		.table-container {
-			max-height: 800px;
+			max-height: 1000px;
 			/* Atur tinggi maksimum kontainer tabel */
 			overflow-y: auto;
 			/* Tambahkan scroll vertikal jika konten melebihi tinggi */
-			border: 1px solid #ddd;
+			border: 10px solid #ddd;
 			/* Tambahkan border di sekitar kontainer */
-			border-radius: 8px;
+			border-radius: 	17px;
 			/* Rounded corners */
 			width: 120%;
 		}
@@ -369,12 +368,13 @@
 			<div class="container home-intro-content">
 				<div class="row">
 					<div class="col-md-12">
-						<h2>MINITOK</h2>
-						<p>The Ultimate Noveity Tools As Solution</p>
-						<div class="layout-element" style="grid-row: 2 / 10; grid-column: 1/3;">
-							<a class="grid-button" href="{{url('/login')}}">Mulai</a>
-							<a class="grid-button">Cek</a>
-						</div>
+							<h2>TELKOM PRESENTS</h2>
+							<h2>MINITOK</h2>
+							<p>Aplikasi Monitoring Stock Minium NTE.Solusi terbaik untuk memonitor kebutuhan NTE di Telkom Regional dengan efisien
+							</p>
+							<div class="layout-element" style="grid-row: 2 / 10; grid-column: 1/3;">
+								<a class="grid-button" href="{{url('/login')}}">Login</a>
+							</div>
 					</div> <!-- /.col-md-12 -->
 				</div> <!-- /.row -->
 			</div> <!-- /.container -->
@@ -383,15 +383,7 @@
 
 	<section class="section" id="about">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-xs-12">
-					<div>
-						<br />
-						<h1>Aplikasi Monitoring Stock Minimum NTE</h1>
-						<p class="testimonial-description">Solusi terbaik untuk memonitor kebutuhan NTE di Telkom
-							Regional dengan efisien</p>
-					</div>
-				</div>
+			<div class="row">				
 				<br />
 				<div class="col-lg-6 col-md-6 col-xs-12">
 					<section>
@@ -400,7 +392,7 @@
 						<br />
 						<div class="tbl-header">
 							<div class="table-container"
-								style="position: relative; max-height: 300px; width: 700px; overflow: scroll;">
+								style="position:center; max-height: 1000px; width: 1000px;">
 								<table class="table table-bordered" id="filterTable">
 									<thead>
 										<tr class="text-center"

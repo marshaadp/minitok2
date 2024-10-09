@@ -4,7 +4,7 @@
 <head>
 	<meta name="viewport" content="minimum-scale=1, initial-scale=1.0, width=device-width">
 	<meta charset="UTF-8">
-	<title>Home</title>
+	<title>DID | SCMT</title>
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 	<meta name="author" content="templatemo">

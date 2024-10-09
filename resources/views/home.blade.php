@@ -122,7 +122,7 @@
 			font-family: 'Montserrat';
 			margin: 0;
 			padding: 0;
-			background: #f4f4f4;
+			background: #fff;
 		}
 
 		/* Table Section */
@@ -139,7 +139,7 @@
 
 		/* Heading */
 		h2 {
-			font-size: 20px;
+			font-size: 50px;
 			margin-bottom: 20px;
 			color: #333;
 			font-family: 'Montserrat';
@@ -395,9 +395,9 @@
 			<div class="container home-intro-content">
 				<div class="row">
 					<div class="col-md-12">
-							<h2>Telkom Presents</h2>
+							<h2-merah>Telkom Presents</h2-merah>
 							<h2>MINITOK</h2>
-							<p>Aplikasi Monitoring Stock Minium NTE.Solusi terbaik untuk memonitor kebutuhan NTE di Telkom Regional dengan efisien
+							<p>Aplikasi Monitoring Stock Minium NTE. Solusi terbaik untuk memonitor kebutuhan NTE di Telkom Regional dengan efisien
 							</p>
 							<div class="layout-element" style="grid-row: 2 / 10; grid-column: 1/3;">
 								<a class="grid-button" href="{{url('/login')}}">Login</a>
@@ -856,7 +856,9 @@
 							<textarea id="message" name="message" placeholder="Tulis pesan Anda di sini"
 								style="margin-top: 5px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; width: 150%; color : #000;"></textarea>
 						</div>
-						<button type="submit">Kirim</button>
+						<div class="layout-element" style="grid-row: 2 / 10; grid-column: 1/3;">
+								<a class="grid-button">Kirim</a>
+						</div>
 					</form>
 				</section>
 			</div>
